@@ -25,7 +25,14 @@ Software to assemble plastomes from Illumina reads.
     </li>
 </ol>
 </li>
-  <li>Once all input files have been added to the fileset, click <b><i>Read</i></b> on the menu.  
+<li>Once all input files have been added to the fileset, click <b><i>Read</i></b> on the menu.  
     This will start the time consuming read process.  A message will appear on the bottom information line
   when the process has completed.  Depending on the computer, it could take several hours for large files.</li>
+<li>From the menu, click <b><i>Assemble / Find genes</i></b>.  This will search for reads that match
+    templates stored in the program for the 120 chloroplast coding regions (tRNA's, genes, etc.). These are
+  then combined to form the genes for the current specimen.</i>
+<li>When this completes, click <b><i>Assemble / Assemble genes</i></b>.  This will take the genes found
+  above and use them as seeds to build contigs that include the gene and its flanking regions.
+  Then the contigs are compared pairwise to find those that can be linked.  This process continues until
+  no contig can be extended nor linked.</li>
 </ol>
