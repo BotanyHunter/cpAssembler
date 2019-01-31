@@ -48,7 +48,8 @@ Software to assemble plastomes from Illumina reads.
 
 <b>Next steps:</b>
 
-The prior steps required a lot of computer time, but very little human time.
+The prior steps required a lot of computer time, but very little human time.  The next steps take more human time.
+
 If the "map contigs" step was run, then a file is created with the extension ".contigmap". This file
 lists the details of the mappings that were found.  Each line shows the start position on the guide plastome,
 the length of the contig, the number of the contig, the direction of the contig, and finally, the contig sequence.
@@ -59,11 +60,34 @@ This file simply lists each contig (one contig per line) from longest to shortes
 
 In my experience, after practice, an assembly that results in less than 10 contigs that includes a contig map
 can procede to a complete plastome in under an hour.  More time will be needed for first time users, accessions
-without a closely related plastome map, and accessions with more than 10 contigs.
+without a closely related guide plastome, and accessions with more than 10 contigs.
 
-The method to proceed from a contig map to a complete plastome is quite intuitive: we know where a contig ends and
+The method to proceed from a contig map to a complete plastome is intuitive: from the contig map, we know where a contig ends and
 where the next contig starts - we simply need to bridge the gap.  The program that built the contigs terminates
 extending the contig because it found something wrong - usually as simple as an error in sequencing, but it could also be a 
 polymorphic site, the boundary between a repeat section and a single copy section, or possibly a gap where no (or a single) read
 spans the gap.
 
+<b>Some details:</b>
+
+<ul><li>The first step is to get a starting point, typically the start of the large single-copy region.
+  From the guide plastome, grab the first 30-ish base pairs and search for these in cpAssembler.
+  (in other words, copy the base pairs to the Windows clip-board - i.e. in the text editor, highlight and hit ctrl^c.).
+  In cpAssembler, click on the rectangular box in the menu bar. This opens up a window for searching the reads
+  for base pair strings.  Paste the copied base pairs into the window and click ok. Hopefully you will see a
+  list of reads that match the search string.
+  
+Next, to confirm that the new accession has the same boundaries as the guide, in cpAssembler, highlight 30-ish base pairs
+to the left of the search string 
+(to highlight, left mouse down at the start of the desired string, drag, and left mouse up at the end of the desired string).
+This automatically places the highlighted string on the clip-board.  Open up the search string box again
+and paste the new string and hit ok to search.  Hopefully the new results will show the search string followed
+by two alternatives each represented about 50-50.  You are looking at one end of the inverted repeat followed by
+the start of the LSC and the end of the LSC. If this has gone smoothly, once again copy the first 30-ish base pairs
+from the LSC and paste into a new sequence in Geneious.  You now have a starting point.</li>
+
+<li>Next step, find if this starting point is part of a contig.  In Geneious, copy the 30-ish base pairs of the
+  starting point and search for it in the .contigmap file.  
+  If found, highlight (in the contigmap) the search string and all base pairs to the right.
+  Replace the search string in Geneious file with the longer string from contig map.</li>
+  </ul>
