@@ -35,8 +35,8 @@ Software to assemble plastomes from Illumina reads.
   above and use them as seeds to build contigs that include the gene and its flanking regions.
   Then the contigs are compared pairwise to find those that can be linked.  This process continues until
   no contig can be extended nor linked.</li>
- <li><i>If</i> you have a closely related accession with a fasta file of the complete plastome, 
-     <i>then</i> you can use this related accession as a guide to map the contigs of the new accession to
+ <li>If you have a closely related accession with a fasta file of the complete plastome, 
+     then you can use this related accession as a guide to map the contigs of the new accession to
      the guide plastome:
   <ul><li>From the menu, click <b><i>File / Import plastome (.fasta)</i></b>.  Browse and select the fasta
     file for the guide plastome.  A message will shortly appear on the bottom information line saying 
@@ -45,3 +45,15 @@ Software to assemble plastomes from Illumina reads.
       scans each contig from the assembly process and looks for a closely matching region of the
       guide plastome.</li></ul>
 </ol>
+
+<b>Next steps:</b>
+
+The prior steps required a lot of computer time, but very little human time.
+If the "map contigs" step was run, then a file is created with the extension ".contigmap". This file
+lists the details of the mappings that were found.  Each line shows the start position on the guide plastome,
+the length of the contig, the number of the contig, the direction of the contig, and finally, the contig sequence.
+If any contigs were not mapped both the forward and reverse complement are listed at the end of the file.
+
+If the "map contigs" step was not run, the assembly step created a file with the extension ".assembly".
+This file simply lists each contig (one contig per line) from longest to shortest.
+
