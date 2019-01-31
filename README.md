@@ -57,3 +57,13 @@ If any contigs were not mapped both the forward and reverse complement are liste
 If the "map contigs" step was not run, the assembly step created a file with the extension ".assembly".
 This file simply lists each contig (one contig per line) from longest to shortest.
 
+In my experience, after practice, an assembly that results in less than 10 contigs that includes a contig map
+can procede to a complete plastome in under an hour.  More time will be needed for first time users, accessions
+without a closely related plastome map, and accessions with more than 10 contigs.
+
+The method to proceed from a contig map to a complete plastome is quite intuitive: we know where a contig ends and
+where the next contig starts - we simply need to bridge the gap.  The program that built the contigs terminates
+extending the contig because it found something wrong - usually as simple as an error in sequencing, but it could also be a 
+polymorphic site, the boundary between a repeat section and a single copy section, or possibly a gap where no (or a single) read
+spans the gap.
+
