@@ -90,4 +90,26 @@ from the LSC and paste into a new sequence in Geneious.  You now have a starting
   starting point and search for it in the .contigmap file.  
   If found, highlight (in the contigmap) the search string and all base pairs to the right.
   Replace the search string in Geneious file with the longer string from contig map.</li>
+  
+  <li>At this point, you are now at a gap. 
+  To span gaps,I usually have open in Geneious my new, growing plastome as well as the guide plastome.
+  In Geneious, grab the last 30-ish bps of the new plastome and find them in the guide plastome. Note the positions
+  of the ends in both plastomes. From the contig map, find the position where the next contig is expected to
+  start. You now know how many base pairs need to be spanned.
+  To set a target extend length, click <b><i>Search / Extend parameters</i></b> and the target length.
+  In Geneious, copy the last 30-ish base pairs
+  of the new, growing plastome and paste into cpAssembler's search box.
+  Hopefully you will find many matches, but there will be polymorphism in the base pairs following the search string.
+  <ul>
+    <li>If there is a clear dominant base pair with one (or few) minor base pairs, this probably is a sequencing error
+      and the dominant base pair is the correct base pair.  Click on the search box and add the desired, correct
+      base pair to the end of the search string and click ok.  
+      Then to extend the string click <b><i>Search / Extend</i></b>.  After extension, the result is automatically
+      placed on the clip-board, so return to Geneious and replace the search string (from the new plastome) with the
+      extension.  
+    </li>
+    <li>If there is only a single match...
   </ul>
+  </ul>
+  
+  <b>Still writing...</b>
